@@ -1,0 +1,158 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>HTML FORM</title>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+     <style>
+       table,tr,td,th{
+        border: 1px solid black;
+        border-collapse: collapse;
+       }
+     </style>
+   </head>
+   <body>
+     <div class="container">
+       <div class="row">
+         <!-- Button trigger modal -->
+          <button
+           type="button"
+           class="btn btn-primary"
+           data-toggle="modal"
+           data-target="#exampleModal"
+         >
+           Add User
+         </button>
+ 
+         <!-- Modal -->
+         <div
+           class="modal fade"
+           id="exampleModal"
+           tabindex="-1"
+           aria-labelledby="exampleModalLabel"
+           aria-hidden="true"
+         >
+           <div class="modal-dialog">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">ADD USER</h5>
+                 <button
+                   type="button"
+                   class="close"
+                   data-dismiss="modal"
+                   aria-label="Close"
+                 >
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <form id="addForm" action="" onsubmit="addUser();return false;">
+                 <div class="modal-body">
+                   <input
+                     id="fname"
+                     type="text"
+                     class="form-control my-2"
+                     placeholder="First Name"
+                     required
+                   />
+                  
+                    <input
+                    id="lname"
+                    type="text"
+                    class="form-control my-2"
+                    placeholder="Last Name"
+                    required
+                    />
+                    <input
+                    id="address"
+                    type="text"
+                    class="form-control my-2"
+                    placeholder="Address"
+                    required
+                    />
+                    <input
+                      id="pincode"
+                      type="text"
+                      class="form-control my-2"
+                      placeholder="Pincode"
+                      required
+                    />
+                    
+                    <label for="genderselection" >Gender :</label>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label><br>
+                    
+                    <label for="menu" required>Choose at least two :</label><br>
+                    <!-- <div class="check"> -->
+                    <input type = "checkbox" name = "food" value = "salad" id="food1"> salad
+                    <input type = "checkbox" name = "food" value = "sandwich"id="food2"> sandwich
+                    <input type = "checkbox" name = "food" value = "applejuice"id="food3"> apple juice
+                    <input type = "checkbox" name = "food" value = "hamburger"id="food4"> hamburger
+                    <input type = "checkbox" name = "food" value = "pizza"id="food5"> pizza 
+                    <!-- </div> -->
+                  
+                    <input
+                      id="state"
+                      type="text"
+                      class="form-control my-2"
+                      placeholder="State"
+                      required
+                    />
+                    <input
+                    id="country"
+                    type="text"
+                    class="form-control my-2"
+                    placeholder="Country"
+                    required
+                     />
+                            
+                  </div>
+                 <div class="modal-footer">
+                   <button
+                     type="button"
+                     class="btn btn-secondary"
+                     data-dismiss="modal"
+                   >
+                     Close
+                   </button>
+                   <input type="submit" value="submit" class="btn btn-primary" />
+                 </div>
+               </form>
+             </div>
+           </div>
+         </div> 
+ 
+ 
+        
+ 
+       </div>
+       <div class="row">
+         <table class="table">
+           <thead>
+             <tr>
+              <!-- // <th scope="col"> </th> -->
+               <th scope="col">First name</th>
+               <th scope="col">Last name</th>
+               <th scope="col">Address</th> 
+               <th scope="col">Pincode</th>
+               <th scope="col">Gender</th>
+               <th scope="col">Food</th>
+               <th scope="col">State</th>
+               <th scope="col">Country</th>
+             </tr>
+           </thead>
+           <tbody id="tdata"></tbody>
+         </table>
+       </div>
+     </div>
+     <script src="script.js"></script>
+   </body>
+ </html> 
